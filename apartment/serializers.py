@@ -6,4 +6,4 @@ from django.db import models
 class ApartmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Apartment
-        fields = ['id', 'name','category', 'price', 'location', 'agent']
+        fields = ['name','category', 'price', 'location', 'agent']

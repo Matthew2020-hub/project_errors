@@ -9,6 +9,7 @@ from .views import GenericAPIView
 
 urlpatterns = [
     # path('viewset/', include(router.urls)),
+    path('views/', GenericAPIView.as_view()),
     path('views/<int:id>', GenericAPIView.as_view()),
     # path('views/', ApartmentApiView.as_view())
 ]
