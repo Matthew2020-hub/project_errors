@@ -10,6 +10,6 @@ from .views import CreateListAPIView, UpdateDestroyAPIView
 urlpatterns = [
     # path('viewset/', include(router.urls)),
     path('views/', CreateListAPIView.as_view()),
-    path('views/<uuid:pk>', UpdateDestroyAPIView.as_view()),
+    path('views/<uuid:apartment_id>', UpdateDestroyAPIView.as_view()),
     # path('views/', ApartmentApiView.as_view())
 ]
