@@ -47,17 +47,17 @@ class UpdateDestroyAPIView(generics.GenericAPIView, mixins.RetrieveModelMixin, m
     def put(self, request, apartment_id):
         query = Apartment.objects.filter(apartment_id=apartment_id)
         if query:
-            serializer = ApartmentSerializer(data=request.data)
+            # serializer = ApartmentSerializer(data=request.data)
 
-            if serializer.is_valid(raise_exception=True):
-                query.name = serializer.validated_data['name']
-                query.category = serializer.validated_data['category']
-                query.price = serializer.validated_data['price']
-                query.location = serializer.validated_data['location']
-                query.agent = serializer.validated_data['agent']
+            # if serializer.is_valid(raise_exception=True):
+            #     query.name = serializer.validated_data['name']
+            #     query.category = serializer.validated_data['category']
+            #     query.price = serializer.validated_data['price']
+            #     query.location = serializer.validated_data['location']
+            #     query.agent = serializer.validated_data['agent']
 
-                for queue in query:
-                    queue.save()
+            #     for queue in query:
+            #         queue.save()
             return self.update(request)
             
         return Response(status=status.HTTP_401_UNAUTHORIZED)
@@ -66,7 +66,7 @@ class UpdateDestroyAPIView(generics.GenericAPIView, mixins.RetrieveModelMixin, m
     def delete(self, request, apartment_id):
         query = Apartment.objects.get(apartment_id=apartment_id)
         if query:
-            query.delete()
+            # query.delete()
             return self.destroy(request)
     
 
